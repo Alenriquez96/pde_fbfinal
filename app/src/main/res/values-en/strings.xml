@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Places Miniguide</string>
+    <string name="action_settings">Settings</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="nombre_del_lugar">Name of the place</string>
+    <string name="buscar_lugar">Find places</string>
+    <string name="imagen_del_lugar">Image of the place</string>
+    <string name="nombre_del_lugar_nombre">Name of the place</string>
+    <string name="descripci_n_detallada_del_lugar">Detailed description of the place...</string>
+    <string name="favorito">Fav</string>
+    <string name="ver_en_mapa">Watch in map</string>
+
+</resources>

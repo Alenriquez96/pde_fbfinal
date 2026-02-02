@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Miniguia Lugares</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="first_fragment_label">Primer Fragmento</string>
+    <string name="second_fragment_label">Segudno Fragmento</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="nombre_del_lugar">Nombre del lugar</string>
+    <string name="buscar_lugar">Buscar lugar</string>
+    <string name="imagen_del_lugar">Imagen del lugar</string>
+    <string name="nombre_del_lugar_nombre">Nombre del lugar</string>
+    <string name="descripci_n_detallada_del_lugar">Descripción detallada del lugar...</string>
+    <string name="favorito">Favorito</string>
+    <string name="ver_en_mapa">Ver en mapa</string>
+
+</resources>

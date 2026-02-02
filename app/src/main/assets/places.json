@@ -1,0 +1,52 @@
+[
+  {
+    "nombre": "Retiro",
+    "descripcion": "Parque famoso en el corazón de Madrid con un gran estanque.",
+    "direccion": null,
+    "latitud": 40.4153,
+    "longitud": -3.6839,
+    "tipo": "Parque",
+    "img": "https://www.ifema.es/img/xl/paseo-barca-estanque-del-retiro/parque-retiro-barcas.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Museo del Prado",
+    "descripcion": "Una de las pinacotecas más importantes del mundo.",
+    "direccion": null,
+    "latitud": 40.4138,
+    "longitud": -3.6921,
+    "tipo": "Museo",
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/bf/67/a6/caption.jpg?w=800&h=800&s=1",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Plaza Mayor",
+    "descripcion": "Plaza porticada situada en el centro de la ciudad.",
+    "direccion": null,
+    "latitud": 40.4154,
+    "longitud": -3.7074,
+    "tipo": "Plaza",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYWLGdu0fH7d8qntpytG4_Va07nb-jzrtxaA&s",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Gran Vía",
+    "descripcion": "La calle más conocida de Madrid, llena de teatros y tiendas.",
+    "direccion": null,
+    "latitud": 40.4203,
+    "longitud": -3.7058,
+    "tipo": "Calle",
+    "img": "https://as2.ftcdn.net/v2/jpg/00/43/78/51/1000_F_43785171_XUkIENfGBqnpbIYu2nEz72D20Vze1InO.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Templo de Debod",
+    "descripcion": "Templo egipcio del siglo II a. d. C. instalado en Madrid.",
+    "direccion": null,
+    "latitud": 40.424,
+    "longitud": -3.7178,
+    "tipo": "Monumento",
+    "img": "https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2022/06/13/16551402494598.jpg",
+    "esFavorita": false
+  }
+]
