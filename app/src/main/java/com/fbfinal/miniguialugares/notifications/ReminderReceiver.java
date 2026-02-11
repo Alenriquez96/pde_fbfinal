@@ -7,6 +7,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
@@ -19,6 +20,7 @@ public class ReminderReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Log.d("ALERTA", "¡La alarma ha llegado!");
 
         // Intent para abrir MainActivity al tocar la notificación
         Intent openAppIntent = new Intent(context, MainActivity.class);
@@ -35,7 +37,7 @@ public class ReminderReceiver extends BroadcastReceiver {
         }
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.outline_circle_notifications_24)
                 .setContentTitle("Recordatorio")
                 .setContentText("Revisa tus lugares favoritos hoy")
                 .setAutoCancel(true)

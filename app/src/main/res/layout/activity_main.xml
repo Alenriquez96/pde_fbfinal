@@ -39,6 +39,15 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:id="@+id/labelMostrandoFavs"
+            android:layout_width="match_parent"
+            android:visibility="invisible"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/mostrando_solo_favoritos"
+            android:textColor="#6537B6" />
+
         <!-- LISTA -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listaLugares"
@@ -58,17 +67,18 @@
     <!-- Notificación -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/notif"
+        android:contentDescription="@string/programar_recordatorio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="88dp"
-        android:onClick="programarRecordatorio"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/outline_circle_notifications_24" />
 
     <!-- Mostrar favoritos -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
+        android:contentDescription="@string/a_adir_favorito"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

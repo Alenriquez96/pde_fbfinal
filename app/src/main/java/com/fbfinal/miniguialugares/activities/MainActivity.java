@@ -1,5 +1,7 @@
 package com.fbfinal.miniguialugares.activities;
 
+import static android.view.View.INVISIBLE;
+
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -17,6 +19,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -53,11 +56,18 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
         prefs = this.getSharedPreferences("com.fbfinal.miniguialugares", Context.MODE_PRIVATE);
-        prefs.edit().putBoolean("mostrandoFavoritos", false).apply();
-        prefs.edit().putString("locale", "es").apply();
+
+        String lang = prefs.getString("locale", "es");
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.setLocale(locale);
+        getResources().updateConfiguration(config, getResources().getDisplayMetrics());
+
+        super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -89,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
         
         binding.listaLugares.setAdapter(adapter);
 
+        binding.notif.setOnClickListener(this::programarRecordatorio);
         binding.searchInput.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -112,6 +123,28 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        // EEsto hace falta porque el Toolbar se gestiona de manera diferente a las activities y si no no funciona el cambio de idioma
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.app_name);
+        }
+    }
+
+    @Override
+    protected void onPostCreate(@Nullable Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+
+        if (!prefs.contains("mostrandoFavoritos")) {
+            prefs.edit().putBoolean("mostrandoFavoritos", false).apply();
+        } else {
+            boolean mostrandoFavoritos = prefs.getBoolean("mostrandoFavoritos", false);
+
+            if (mostrandoFavoritos) {
+                binding.labelMostrandoFavs.setVisibility(View.VISIBLE);
+            } else {
+                binding.labelMostrandoFavs.setVisibility(INVISIBLE);
+            }
+        }
     }
 
     @Override
@@ -129,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
         executor.execute(() -> {
             try {
-                Thread.sleep(2000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -140,11 +173,18 @@ public class MainActivity extends AppCompatActivity {
                 dbManager.addLugares(lugares);
             }
 
-            List<Lugar> items = dbManager.getAll();
+            List<Lugar> items;
+            boolean mostrandoFavs = prefs.getBoolean("mostrandoFavoritos", false);
+            if (mostrandoFavs)  {
+                items = dbManager.getFavoritos();
+            } else {
+                items = dbManager.getAll();
+            }
 
-            handler.post(() -> {
+            List<Lugar> finalItems = items;
+                handler.post(() -> {
                 listaLugares.clear();
-                listaLugares.addAll(items);
+                listaLugares.addAll(finalItems);
                 adapter.notifyDataSetChanged();
                 binding.progressBar.setVisibility(View.GONE);
             });
@@ -163,11 +203,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_language_en) {
-            if (prefs.getString("locale", "es").equals("es")) {
-                prefs.edit().putString("locale", "en").apply();
-            } else {
-                prefs.edit().putString("locale", "es").apply();
-            }
             cambiarIdioma();
             return true;
         }
@@ -189,7 +224,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<Lugar> cargarLugaresDesdeJson() {
-        String json = loadJSONFromAssets("places.json");
+        String lang = prefs.getString("locale", "es");
+        // Elegimos el archivo según el idioma guardado
+        String fileName = lang.equals("es") ? "places.json" : "places-en.json";
+
+        String json = loadJSONFromAssets(fileName);
         if (json == null) return new ArrayList<>();
 
         Gson gson = new Gson();
@@ -200,22 +239,13 @@ public class MainActivity extends AppCompatActivity {
     public void onShowFavoritos(View v) {
         // Traemos del SharedPreferences el boolean y lo actualziamos
         boolean mostrandoFavoritos = !prefs.getBoolean("mostrandoFavoritos", false);
+        binding.labelMostrandoFavs.setVisibility(mostrandoFavoritos ? View.VISIBLE : View.INVISIBLE);
         prefs.edit().putBoolean("mostrandoFavoritos", mostrandoFavoritos).apply();
 
-        String msg = mostrandoFavoritos ? "Mostrando Favoritos" : "Mostrando Todos";
+        String msg = mostrandoFavoritos ? getString(R.string.msg_mostrando_favoritos) : getString(R.string.msg_mostrando_todos);
         Toast.makeText(this.getApplicationContext(), msg, Toast.LENGTH_LONG).show();
 
-        if (mostrandoFavoritos) {
-            List<Lugar> filteredList = new ArrayList<>();
-            for (Lugar lugar : listaLugares) {
-                if (lugar.isEsFavorita()) {
-                    filteredList.add(lugar);
-                }
-            }
-            adapter.setLugares(filteredList);
-        } else {
-            adapter.setLugares(listaLugares);
-        }
+        cargarDatos();
     }
 
     /**
@@ -235,24 +265,29 @@ public class MainActivity extends AppCompatActivity {
 
         // Se dispara en 24h (una vez al día)
         long intervalo = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
-        long triggerTime = System.currentTimeMillis() + intervalo;
+        long triggerTime = System.currentTimeMillis() + 5000;
 
-        alarmManager.setRepeating(
+        alarmManager.set(
                 AlarmManager.RTC_WAKEUP,
                 triggerTime,
-                intervalo,
                 pendingIntent
         );
 
-        Toast.makeText(this, "Recordatorio programado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, getString(R.string.recordatorio_programado), Toast.LENGTH_SHORT).show();
     }
 
     private void cambiarIdioma() {
         String idiomaActual = prefs.getString("locale", "es");
+        // Si es "es", el nuevo es "en". Si no, es "es".
         String nuevoIdioma = idiomaActual.equals("es") ? "en" : "es";
-        String msg = nuevoIdioma.equals("es") ? "Español" : "Inglés";
-        Toast.makeText(this.getApplicationContext(), "Cambiando idioma a: " + msg, Toast.LENGTH_LONG).show();
 
+        if (nuevoIdioma.equals("en")) {
+            Toast.makeText(this, "Language set to english", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Idioma cambiado a español", Toast.LENGTH_SHORT).show();
+        }
+
+        // Guardamos y aplicamos
         prefs.edit().putString("locale", nuevoIdioma).apply();
         setLocale(nuevoIdioma);
     }
@@ -261,12 +296,15 @@ public class MainActivity extends AppCompatActivity {
         Locale locale = new Locale(idioma);
         Locale.setDefault(locale);
 
-        Configuration config = new Configuration(getResources().getConfiguration());
+        Configuration config = new Configuration();
         config.setLocale(locale);
 
-        Context context = createConfigurationContext(config);
+        // Esto asegura que los recursos (strings.xml) se recarguen
         getResources().updateConfiguration(config, getResources().getDisplayMetrics());
 
-        recreate();
+        // Finalizamos la actividad y la volvemos a abrir para limpiar el stack
+        Intent refresh = new Intent(this, MainActivity.class);
+        startActivity(refresh);
+        finish();
     }
 }

@@ -12,5 +12,11 @@
     <string name="descripci_n_detallada_del_lugar">Detailed description of the place...</string>
     <string name="favorito">Fav</string>
     <string name="ver_en_mapa">Watch in map</string>
+    <string name="mostrando_solo_favoritos">Showing only favorites</string>
+    <string name="programar_recordatorio">Program alarm</string>
+    <string name="a_adir_favorito">Add favorite</string>
+    <string name="msg_mostrando_favoritos">Showing Favorites</string>
+    <string name="msg_mostrando_todos">Showing All</string>
+    <string name="recordatorio_programado">Alarm programmed</string>
 
 </resources>

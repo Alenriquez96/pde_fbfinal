@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase;
 import com.fbfinal.miniguialugares.dao.LugarDao;
 import com.fbfinal.miniguialugares.model.Lugar;
 
-@Database(entities = {Lugar.class}, version = 9)
+@Database(entities = {Lugar.class}, version = 10)
 abstract public class AppDatabase extends RoomDatabase {
     public abstract LugarDao lugarDao();
 }

@@ -8,11 +8,14 @@ import com.fbfinal.miniguialugares.dao.LugarDao;
 import com.fbfinal.miniguialugares.model.Lugar;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 public class DbManager {
     private static DbManager instance;
     private LugarDao lugarDao;
     private AppDatabase db;
+    private Logger logger = Logger.getLogger(DbManager.class.getName());
+
 
     public static DbManager getDbManager(Context context){
         if (instance == null) {
@@ -55,5 +58,10 @@ public class DbManager {
 
     public Lugar getByName(String nombre) {
         return lugarDao.findByNombre(nombre);
+    }
+
+    public List<Lugar> getFavoritos() {
+        logger.info("Obteniendo favoritos...");
+        return lugarDao.getFavoritos();
     }
 }

@@ -12,5 +12,11 @@
     <string name="descripci_n_detallada_del_lugar">Descripción detallada del lugar...</string>
     <string name="favorito">Favorito</string>
     <string name="ver_en_mapa">Ver en mapa</string>
+    <string name="mostrando_solo_favoritos">Mostrando solo favoritos</string>
+    <string name="programar_recordatorio">Programar recordatorio</string>
+    <string name="a_adir_favorito">Añadir favorito</string>
+    <string name="msg_mostrando_favoritos">Mostrando Favoritos</string>
+    <string name="msg_mostrando_todos">Mostrando Todos</string>
+    <string name="recordatorio_programado">Recordatorio programado</string>
 
 </resources>

@@ -1,0 +1,52 @@
+[
+  {
+    "nombre": "Retiro Park",
+    "descripcion": "Famous park in the heart of Madrid featuring a large lake.",
+    "direccion": null,
+    "latitud": 40.4153,
+    "longitud": -3.6839,
+    "tipo": "Park",
+    "img": "https://www.ifema.es/img/xl/paseo-barca-estanque-del-retiro/parque-retiro-barcas.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Prado Museum",
+    "descripcion": "One of the most important art galleries in the world.",
+    "direccion": null,
+    "latitud": 40.4138,
+    "longitud": -3.6921,
+    "tipo": "Museum",
+    "img": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/31/bf/67/a6/caption.jpg?w=800&h=800&s=1",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Plaza Mayor",
+    "descripcion": "Porticoed square located in the city center.",
+    "direccion": null,
+    "latitud": 40.4154,
+    "longitud": -3.7074,
+    "tipo": "Square",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYWLGdu0fH7d8qntpytG4_Va07nb-jzrtxaA&s",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Gran Vía",
+    "descripcion": "Madrid's best-known street, filled with theaters and shops.",
+    "direccion": null,
+    "latitud": 40.4203,
+    "longitud": -3.7058,
+    "tipo": "Street",
+    "img": "https://as2.ftcdn.net/v2/jpg/00/43/78/51/1000_F_43785171_XUkIENfGBqnpbIYu2nEz72D20Vze1InO.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Temple of Debod",
+    "descripcion": "2nd-century BC Egyptian temple relocated to Madrid.",
+    "direccion": null,
+    "latitud": 40.424,
+    "longitud": -3.7178,
+    "tipo": "Monument",
+    "img": "https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2022/06/13/16551402494598.jpg",
+    "esFavorita": false
+  }
+]

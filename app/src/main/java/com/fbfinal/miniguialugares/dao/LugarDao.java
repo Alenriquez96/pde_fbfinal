@@ -27,6 +27,10 @@ public interface LugarDao {
     @Query("SELECT * FROM Lugar WHERE nombre LIKE :name LIMIT 1")
     Lugar findByName(String name);
 
+    @Query("SELECT * FROM Lugar WHERE esFavorita = true")
+    List<Lugar> getFavoritos();
+
+
     @Query("SELECT count(*) from Lugar")
     int countLugares();
 
