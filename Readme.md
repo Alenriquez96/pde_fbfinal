@@ -3,11 +3,10 @@
 Una aplicación Android desarrollada en Java para gestionar una lista de lugares de interés, con soporte para favoritos, notificaciones programadas y multi-idioma (Español/Inglés).
 
 ## 🚀 Cómo ejecutar la aplicación
-1. **Clonar el repositorio** o descargar el código fuente.
-2. Abrir el proyecto con **Android Studio** (versión Ladybug o superior recomendada).
+1. **Clonar el repositorio desde https://github.com/Alenriquez96/pde_fbfinal.git** o descargar el código fuente.
+2. Abrir el proyecto con **Android Studio**.
 3. Asegurarse de tener instalado el **SDK de Android 34** (o superior).
-4. Sincronizar el proyecto con Gradle (**File > Sync Project with Gradle Files**).
-5. Ejecutar en un **emulador** (Pixel 5 API 33+) o un **dispositivo físico** con depuración USB activada.
+4. Ejecutar en un **emulador** (Pixel 5 API 33+) o un **dispositivo físico** con depuración USB activada.
 
 ## 📱 ¿Qué hace la aplicación?
 La app permite descubrir lugares turísticos mediante las siguientes funciones:
