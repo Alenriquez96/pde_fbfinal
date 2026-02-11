@@ -7,6 +7,7 @@ Una aplicación Android desarrollada en Java para gestionar una lista de lugares
 2. Abrir el proyecto con **Android Studio**.
 3. Asegurarse de tener instalado el **SDK de Android 34** (o superior).
 4. Ejecutar en un **emulador** (Pixel 5 API 33+) o un **dispositivo físico** con depuración USB activada.
+5. IMPORTANTE CONTAR CON ACCESO A INTERNET
 
 ## 📱 ¿Qué hace la aplicación?
 La app permite descubrir lugares turísticos mediante las siguientes funciones:
