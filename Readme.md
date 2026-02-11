@@ -40,5 +40,7 @@ Para evitar la mezcla de idiomas en la UI, se ha implementado un método `setLoc
 ## ⚡ Rendimiento (Android Profiler)
 Tras ejecutar la aplicación con **Android Profiler**, se han extraído las siguientes conclusiones:
 
+![Profiler](app/src/main/assets/profiler.png)
+
 * **Riesgo detectado:** Durante la navegación rápida por la lista, se observaron picos en el uso de memoria RAM al cargar imágenes mediante URLs. Esto podría derivar en errores de *OutOfMemory* en dispositivos de gama baja si las imágenes son muy pesadas.
 * **Mejora aplicada:** Se ha implementado `ExecutorService` con un `Handler` vinculado al `Looper.getMainLooper()`. Esto desplaza las operaciones de lectura/escritura de la base de datos a un hilo secundario, evitando que el hilo principal (UI Thread) se bloquee y garantizando una experiencia de usuario fluida (60 FPS).
