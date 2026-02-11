@@ -48,5 +48,55 @@
     "tipo": "Monument",
     "img": "https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2022/06/13/16551402494598.jpg",
     "esFavorita": false
+  },
+  {
+    "nombre": "Alcazaba of Malaga",
+    "descripcion": "Palatial fortress from the Muslim era located at the foot of Mount Gibralfaro.",
+    "direccion": null,
+    "latitud": 36.7212,
+    "longitud": -4.4162,
+    "tipo": "Monument",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Alcazaba_de_M%C3%A1laga_desde_el_puerto_edited.JPG",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Caminito del Rey",
+    "descripcion": "A walkway pinned along the steep walls of a narrow gorge in El Chorro.",
+    "direccion": null,
+    "latitud": 36.9149,
+    "longitud": -4.7725,
+    "tipo": "Nature",
+    "img": "https://cdn.turisapps.com/site-113/a31570d3-8326-4079-beac-babaf5288171/main.webp",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Roman Theatre",
+    "descripcion": "Archaeological remains of the Roman theater from the 1st century AD.",
+    "direccion": null,
+    "latitud": 36.7215,
+    "longitud": -4.4172,
+    "tipo": "Monument",
+    "img": "https://www.civitatis.com/f/espana/malaga/guia/teatro-romano.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Larios Street",
+    "descripcion": "The most elegant and important street in Malaga, famous for its Christmas lights.",
+    "direccion": null,
+    "latitud": 36.7196,
+    "longitud": -4.4214,
+    "tipo": "Street",
+    "img": "https://static.visita.malaga.eu/visita/subidas/imagenes/9/0/arc_27709_g.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Soho Malaga",
+    "descripcion": "The Arts District, famous for its graffiti and cultural galleries.",
+    "direccion": null,
+    "latitud": 36.7161,
+    "longitud": -4.4234,
+    "tipo": "Neighborhood",
+    "img": "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/andalucia/malaga-soho-60518443-c-pabkov123rf.jpg_1014274486.jpg",
+    "esFavorita": false
   }
 ]

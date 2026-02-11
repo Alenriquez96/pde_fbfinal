@@ -48,5 +48,55 @@
     "tipo": "Monumento",
     "img": "https://e01-elmundo.uecdn.es/assets/multimedia/imagenes/2022/06/13/16551402494598.jpg",
     "esFavorita": false
+  },
+  {
+    "nombre": "La Alcazaba de Málaga",
+    "descripcion": "Palacio fortaleza de la época musulmana situado a los pies del monte Gibralfaro.",
+    "direccion": null,
+    "latitud": 36.7212,
+    "longitud": -4.4162,
+    "tipo": "Monumento",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Alcazaba_de_M%C3%A1laga_desde_el_puerto_edited.JPG",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Caminito del Rey",
+    "descripcion": "Paso construido en las paredes del desfiladero de los Gaitanes en El Chorro.",
+    "direccion": null,
+    "latitud": 36.9149,
+    "longitud": -4.7725,
+    "tipo": "Naturaleza",
+    "img": "https://cdn.turisapps.com/site-113/a31570d3-8326-4079-beac-babaf5288171/main.webp",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Teatro Romano",
+    "descripcion": "Restos arqueológicos del teatro de la Malaca romana del siglo I d. C.",
+    "direccion": null,
+    "latitud": 36.7215,
+    "longitud": -4.4172,
+    "tipo": "Monumento",
+    "img": "https://www.civitatis.com/f/espana/malaga/guia/teatro-romano.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Calle Larios",
+    "descripcion": "La vía más elegante e importante de Málaga, famosa por su iluminación navideña.",
+    "direccion": null,
+    "latitud": 36.7196,
+    "longitud": -4.4214,
+    "tipo": "Calle",
+    "img": "https://static.visita.malaga.eu/visita/subidas/imagenes/9/0/arc_27709_g.jpg",
+    "esFavorita": false
+  },
+  {
+    "nombre": "Soho Málaga",
+    "descripcion": "Barrio de las Artes, famoso por sus grafitis y galerías culturales.",
+    "direccion": null,
+    "latitud": 36.7161,
+    "longitud": -4.4234,
+    "tipo": "Barrio",
+    "img": "https://www.spain.info/export/sites/segtur/.content/imagenes/cabeceras-grandes/andalucia/malaga-soho-60518443-c-pabkov123rf.jpg_1014274486.jpg",
+    "esFavorita": false
   }
 ]

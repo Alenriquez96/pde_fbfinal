@@ -22,8 +22,7 @@ La app permite descubrir lugares turísticos mediante las siguientes funciones:
 | Lista Principal |       Detalle del Lugar       |      Filtro Favoritos       |
 | :---: |:-----------------------------:|:---------------------------:|
 | ![Lista](assets/lista_principal.png) | ![Detalle](assets/detalle_lugar.png) | ![Favoritos](assets/favoritos.png) |
-*(Sustituye estas rutas por las imágenes en tu carpeta de proyecto)*
-
+   
 ## 💡 Decisiones importantes
 
 ### 1. Persistencia de Datos
