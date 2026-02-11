@@ -1,5 +1,7 @@
 # Miniguía de Lugares 📍
 
+**Proyecto realizado por Alberto Enríquez Enríquez - NP: 0166566**
+
 Una aplicación Android desarrollada en Java para gestionar una lista de lugares de interés, con soporte para favoritos, notificaciones programadas y multi-idioma (Español/Inglés).
 
 ## 🚀 Cómo ejecutar la aplicación
